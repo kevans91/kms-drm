@@ -38,5 +38,10 @@
 
 #define	unreachable()	__unreachable()
 
+/* FreeBSD 13 / linuxkpi-common-v5.0 compatibility */
+#undef access_ok
+#define	access_ok(a,b,c)	linux_access_ok(b,c)
+#undef user_access_begin
+#define	user_access_begin()
 
 #endif /* _LINUX_GPLV2_COMPILER_H_ */
